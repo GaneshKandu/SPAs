@@ -1,12 +1,16 @@
 {
   "name": "spa_express",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "",
   "exports": {
     ".": "./src/index.js"
   },
+  "repository": {
+  "type": "git",
+  "url": "git+https://github.com/GaneshKandu/SPAs.git"
+  },
   "scripts": {},
-  "keywords": ["SPA","Express"],
+  "keywords": ["SPAs","Express"],
   "author": "Ganesh Kandu",
   "license": "ISC",
   "type": "module",
