@@ -12,7 +12,7 @@
   "scripts": {},
   "keywords": ["SPAs","Express"],
   "author": "Ganesh Kandu",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "type": "module",
   "devDependencies": {
     "globals": "^16.2.0"
