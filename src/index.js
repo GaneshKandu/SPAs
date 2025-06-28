@@ -1,18 +1,22 @@
 
 import path from 'path';
-import express from 'express';
+import mime from 'mime-types';
+import fs from "fs";
 
-export default function spa_express(app, distpath, options = {}) {
+export default function spa_express(distpath, options = {}) {
   return function (req, res, next) {
     const basedir = process.cwd();
-    app.use(express.static(path.join(basedir, distpath),{
-        index: false,
-        maxAge: '1d'
-    }));
-    app.use((req, res, next) => {
-      const filePath = path.join(basedir, distpath, 'index.html');
-      return res.sendFile(filePath);
-    });
-    next();
+    let file = path.join(basedir, distpath, req.path);
+    try {
+      let stats = fs.statSync(file);
+      if (!stats.isFile()){
+        file = path.join(basedir, distpath, 'index.html');
+      }
+    } catch (err) {
+        file = path.join(basedir, distpath, 'index.html');
+    }
+    const mimeType = mime.lookup(file);
+    res.set('Content-Type', mimeType);
+    return res.sendFile(file);
   };
 }

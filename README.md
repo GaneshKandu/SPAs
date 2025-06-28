@@ -22,7 +22,8 @@ import spa_express from 'spa-express';
 const app = express();
 
 // Serve your SPA from the 'dist' directory (can be 'build' for React apps)
-app.use(spa_express(app, 'dist'));
+// add at the end of all routes andn just before listen
+app.use(spa_express('dist'));
 
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000');
