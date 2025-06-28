@@ -30,7 +30,7 @@ import spa_express from 'spa-express';
 const app = express();
 
 // Serve your SPA from the 'dist' directory (can be 'build' for React apps)
-// add at the end of all routes andn just before listen
+// add at the end of all routes and just before listen
 app.use(spa_express('dist'));
 
 app.listen(3000, () => {
