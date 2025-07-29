@@ -19,13 +19,13 @@ Serve Single Page Application (SPA) builds like React, Angular, or Vue directly 
 
 ## Installation
 
-``npm install spa-express``
+``npm install spa_express``
 
 ## Usage
 
 ```js
 import express from 'express';
-import spa_express from 'spa-express';
+import spa_express from 'spa_express';
 
 const app = express();
 
